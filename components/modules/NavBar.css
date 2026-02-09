@@ -1,0 +1,95 @@
+.NavBar-stack {
+    position: fixed; /* keep it persistent */
+    top: var(--l);
+    right: var(--l);
+    z-index:900;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: var(--s);
+}
+
+.NavBar-container {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--s);
+    align-items: flex-end;
+
+    padding: var(--s) var(--m);
+    background-color: var(--nav-bg);
+    border-radius: 10px; /* round-cornered rectangle */
+
+    /* Use the utilities font (inherits from body) */
+    font-family: inherit;
+
+    /* subtle elevation */
+    box-shadow: var(--shadow-nav);
+}
+
+.NavBar-link {
+    color: var(--nav-text);
+    opacity: 1;
+    text-decoration: none;
+}
+
+.NavBar-link:hover {
+    opacity: 0.6;
+    text-decoration: underline;
+}
+
+.NavBar-link + .NavBar-link {
+  margin-left: var(--s);
+}
+
+.NavBar-toggle {
+    border: none;
+    background: var(--nav-bg);
+    color: var(--nav-text);
+    padding: var(--s) var(--m);
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: opacity 160ms ease;
+}
+
+.NavBar-toggle:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 900px) {
+    .NavBar-container {
+        padding: var(--s);
+    }
+
+    .NavBar-link {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .NavBar-stack {
+        top: auto;
+        bottom: var(--m);
+        right: 50%;
+        transform: translateX(50%);
+        align-items: center;
+    }
+
+    .NavBar-container {
+        flex-direction: row;
+        gap: var(--m);
+        padding: var(--s) var(--m);
+    }
+
+    .NavBar-link + .NavBar-link {
+        margin-left: 0;
+    }
+
+    .NavBar-toggle {
+        width: 100%;
+        text-align: center;
+    }
+}

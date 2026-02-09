@@ -1,0 +1,71 @@
+.photo-card {
+  margin: 0 0 var(--gallery-gap);
+  display: inline-block;
+  width: 100%;
+  break-inside: avoid;
+}
+
+.photo-card__button {
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+  position: relative;
+  border-radius: var(--radius-l);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  transition: box-shadow 180ms ease;
+}
+
+.photo-card__button:focus-visible {
+  outline: 2px solid var(--dusk-blue);
+  outline-offset: 2px;
+}
+
+.photo-card__button:hover {
+  box-shadow: var(--shadow-tight);
+}
+
+.photo-card__frame {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: var(--white);
+}
+
+.photo-card.is-wide .photo-card__frame { aspect-ratio: 16 / 9; }
+.photo-card.is-tall .photo-card__frame { aspect-ratio: 3 / 4; }
+.photo-card.is-big .photo-card__frame { aspect-ratio: 1 / 1; }
+
+.photo-card__frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-card__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: var(--xs);
+  padding: var(--m);
+  color: var(--white);
+  background: linear-gradient(180deg, var(--overlay-soft) 35%, var(--overlay-strong) 100%);
+  opacity: 0;
+  transition: opacity 180ms ease;
+}
+
+.photo-card__button:hover .photo-card__overlay,
+.photo-card__button:focus-visible .photo-card__overlay {
+  opacity: 1;
+}
+
+.photo-card__credit {
+  font-size: 0.85rem;
+  opacity: 0.85;
+}

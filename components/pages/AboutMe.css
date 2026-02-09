@@ -1,0 +1,74 @@
+.AboutMe-shell {
+  color: var(--text-primary);
+}
+
+.AboutMe-intro {
+  margin: 0 0 var(--l);
+  color: var(--text-muted);
+  max-width: 720px;
+  line-height: 1.6;
+}
+
+.AboutMe-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--l);
+}
+
+.AboutMe-card {
+  display: flex;
+  gap: var(--l);
+  align-items: stretch;
+  background: var(--surface-card);
+  border-radius: var(--radius-l);
+  box-shadow: var(--shadow-soft);
+  padding: var(--m);
+}
+
+.AboutMe-card.is-reverse {
+  flex-direction: row-reverse;
+}
+
+.AboutMe-imageWrap {
+  flex: 1 1 40%;
+  border-radius: var(--radius-m);
+  overflow: hidden;
+  min-height: 220px;
+  background: var(--alabaster-grey);
+}
+
+.AboutMe-imageWrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.AboutMe-content {
+  flex: 1 1 60%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s);
+}
+
+.AboutMe-content h2 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.AboutMe-content p {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .AboutMe-card,
+  .AboutMe-card.is-reverse {
+    flex-direction: column;
+  }
+
+  .AboutMe-imageWrap {
+    min-height: 200px;
+  }
+}
